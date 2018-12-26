@@ -24,4 +24,5 @@ class RemoveDups
             n = n.next;
         }
     }
+    // O(N) time ==> N number of elements in list
 }
