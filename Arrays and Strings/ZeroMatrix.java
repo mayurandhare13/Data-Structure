@@ -89,7 +89,7 @@ class ZeroMatrix
         ZeroMatrix zm = new ZeroMatrix();
         zm.setZeros(mat);
 
-        for(int [] a : mat)
+        for(int[] a : mat)
         {
             for(int i : a)
                 System.out.print(i + "\t");
