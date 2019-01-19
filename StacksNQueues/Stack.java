@@ -1,3 +1,5 @@
+import java.util.EmptyStackException;
+
 import Node;
 
 public class Stack
@@ -40,6 +42,11 @@ public class Stack
         top = top.below;
         size--;
         return t.value;
+    }
+
+    public int peek()
+    {
+        return top.value;
     }
 
     public boolean isEmpty()

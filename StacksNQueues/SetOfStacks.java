@@ -48,6 +48,15 @@ public class SetOfStacks
         return v;
     }
 
+    public int peek()
+    {
+        Stack last = getLastStack();
+
+        if(last == null) throw new EmptyStackException();
+
+        return last.peek();
+    }
+
     public boolean isEmpty()
     {
         Stack last = getLastStack();
@@ -78,6 +87,7 @@ public class SetOfStacks
         }
         else if (stacks.size() > index + 1)
         {
+            System.out.printf("size: %d, (index+1): %d %n", stacks.size(), (index+1));
             int v = leftShift(index + 1, false);
             stack.push(v);
         }
@@ -87,16 +97,19 @@ public class SetOfStacks
 
     public static void main(String[] args) 
     {
-        SetOfStacks ss = new SetOfStacks(5);
+        SetOfStacks ss = new SetOfStacks(2);
         ss.push(13);
         ss.push(9);
         ss.push(1994);
         ss.push(30);
         ss.push(8);
         ss.push(1994);
-        ss.push(1);
+        ss.push(101);
         ss.push(1);
         ss.push(2001);
         System.out.println(ss.popAt(0));
+        System.out.println(ss.pop());
+        System.out.println(ss.peek());
+        System.out.println("# of Stacks remains: "+ ss.stacks.size());
     }
 }
