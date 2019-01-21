@@ -82,7 +82,7 @@ class PathSum
     {
         TreeNode root = new TreeNode(2);
 		root.left = new TreeNode(0);
-		root.right = new TreeNode(0);
+		root.right = new TreeNode(2);
 		root.right.left = new TreeNode(0);
 		root.right.left.right = new TreeNode(2);
 		root.right.right = new TreeNode(0);
@@ -90,7 +90,7 @@ class PathSum
         System.out.println(countPathsWithSum(root, 4));    
         
         System.out.println("Optimize method");
-       // System.out.println(tallyPathsWithSum(root, 0));
+        System.out.println(tallyPathsWithSum(root, 0));
 		System.out.println(tallyPathsWithSum(root, 4));    
     }
 }
