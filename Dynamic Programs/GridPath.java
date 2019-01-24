@@ -6,7 +6,7 @@ class GridPath
 {
     private static boolean getPath(boolean[][] maze, int row, int col, ArrayList<Point> path, HashSet<Point> failedPoints)
     {
-        /* If out of bounds or not available, return.*/
+        /* If out of bounds or not available, return. !maze[row][col] means theres is false value*/
 		if (col < 0 || row < 0 || !maze[row][col]) {
 			return false;
 		}
@@ -25,7 +25,7 @@ class GridPath
             return true;
         }
 
-        failedPoints.add(p); // cache result
+        failedPoints.add(p); // cache result as there is no route from this point
         return false;
     }
 
