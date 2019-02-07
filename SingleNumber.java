@@ -5,19 +5,12 @@ import java.util.BitSet;
 class SingleNumber {
     public static void singleNumber(int[] nums) 
     {
-        BitSet bs = new BitSet(nums.length);
-        for(int n : nums)
+        int n = 0;
+        for(int i : nums)
         {
-            if(!bs.get(n-1))
-            {
-                bs.set(n-1);
-            }
-            else
-                bs.clear(n-1);
-            System.out.println(bs);
-        }    
-
-        System.out.println(bs.length());
+            n ^= i;
+        }
+        System.out.println(n);
     }
 
     public static void main(String[] args) {
