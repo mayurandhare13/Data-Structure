@@ -10,6 +10,8 @@ class HammingDistance
             r >>= 1;
         }
         return count;
+
+        //Integer.bitCount(x^y) --> one line solution
     }
 
     public static void main(String[] args) 
