@@ -1,3 +1,5 @@
+//https://leetcode.com/problems/perfect-number/
+
 class PerfectNumber
 {
     public static boolean checkPerfectNumber(int num) 
