@@ -30,6 +30,34 @@ def count_univals(root):
     return total_count
 
 
+# Optimize solution o(n)
+def count_univals2(root):
+    total_count, is_unival = countHelper(root)
+    return total_count
+
+
+def countHelper(root):
+    if root == None:
+        return (0, True)
+    
+    left_count, is_left_unival = countHelper(root.left)
+    right_count, is_right_unival = countHelper(root.right)
+
+    is_unival = True
+    if not is_left_unival or not is_right_unival:
+        is_unival = False
+    if root.left != None and root.left.value != root.value:
+        is_unival = False
+    if root.right != None and root.right.value != root.value:
+        is_unival = False
+
+    if is_unival:
+        return (left_count + right_count + 1, True)
+    else:
+        return (left_count + right_count, False)
+
+
+
         #   2
         #  / \
         # 1   2
@@ -49,4 +77,4 @@ if __name__ == "__main__":
     n3.left = n4
     n3.right = n5
     n5.right = n6
-    print(count_univals(n1))
+    print(count_univals2(n1))
