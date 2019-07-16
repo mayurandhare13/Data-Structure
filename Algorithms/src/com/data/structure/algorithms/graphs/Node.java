@@ -1,30 +1,30 @@
 package com.data.structure.algorithms.graphs;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Node
 {
-    private Node adjacent[];
-    public int adjacentCount;
+    private List<Node> adjacent;
     private String vertex;
+    public SCC.State state;
     
-    public Node(String vertex, int adjacentLength)
+    public Node(String vertex)
     {
         this.vertex = vertex;
-        adjacentCount = 0;
-        adjacent = new Node[adjacentLength];
+        adjacent = new ArrayList<>();
+    }
+
+    public String getVertexName() {
+        return this.vertex;
     }
 
     public void addAdjacent(Node x)
     {
-        if(adjacentCount < adjacent.length)
-        {
-            this.adjacent[adjacentCount] = x;
-            adjacentCount++;
-        }
-        else
-            System.out.println("No more adjacent can be added");
+        this.adjacent.add(x);
     }
 
-    public Node[] getAdjacent(){ return this.adjacent;}
+    public List<Node> getAdjacent(){ return this.adjacent;}
 
     public String getVertex(){ return this.vertex; }
 }
