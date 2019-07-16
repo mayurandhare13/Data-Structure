@@ -6,6 +6,7 @@ import java.util.Stack;
 public class SCC {
     public enum State {Visited, Unvisited}
 
+    // invert the direction of graph
     private Graph getTranspose(Graph g) {
         Graph gr = new Graph();
         List<Node> vertices = g.getVertices();
